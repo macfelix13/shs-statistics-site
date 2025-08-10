@@ -16,3 +16,22 @@ To view the site locally:
 2. Open `index.html` in your browser
 
 ## 📁 File Structure
+html/ ├── index.html ├── topics.html ├── descriptive.html ├── probability.html ├── quiz.html ├── calculator.html css/ └── style.css
+
+## 📸 Screenshots
+_Add screenshots of your homepage, calculator tool, and quiz page here._
+
+## 🛠️ Technologies Used
+- HTML5
+- CSS3
+- JavaScript
+
+## 🙌 Author
+**Greatnesse MacFelix**  
+[GitHub Profile](https://github.com/macfelix13)
+
+## 📬 Contact
+For feedback or collaboration: `macfelix13@gmail.com`
+
+## 📄 License
+This project is open-source under the MIT License.
