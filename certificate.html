@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Certificate | SHS Statistics & Probability</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h2>Enter your name to personalize your certificate:</h2>
+  <input type="text" id="nameInput" placeholder="Your full name" oninput="updateName()">
+
+  <div class="certificate" id="certificateContent">
+    <div class="seal">🏅</div>
+    <h1>Certificate of Excellence</h1>
+    <p>This certifies that</p>
+    <h2><strong id="studentName">Greatnesse</strong></h2>
+    <p>has achieved a perfect score on the SHS Statistics & Probability Quiz.</p>
+    <p><strong>Date:</strong> August 10, 2025</p>
+    <p><strong>Score:</strong> 5/5</p>
+    <p>Keep up the great work and continue your journey of learning!</p>
+  </div>
+  <div class="certificate-wrapper">
+  <div class="certificate" id="certificateContent">
+    <!-- Certificate content here -->
+  </div>
+</div>
+<div style="text-align: center; margin-top: 30px;">
+  <a href="quiz.html" class="quiz-button">Take Another Quiz</a>
+</div>
+
+
+
+  <button id="downloadBtn" onclick="downloadCertificate()">Download as PDF</button>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+  <script>
+    function updateName() {
+      const name = document.getElementById('nameInput').value;
+      document.getElementById('studentName').textContent = name || 'Greatnesse';
+    }
+
+    function downloadCertificate() {
+      const element = document.getElementById('certificateContent');
+      html2pdf().set({
+        margin: 1,
+        filename: 'SHS_Certificate.pdf',
+        image: { type: 'jpeg', quality: 0.98 },
+        html2canvas: { scale: 2 },
+        jsPDF: { unit: 'in', format: 'letter', orientation: 'portrait' }
+      }).from(element).save();
+      html2pdf().set({
+  margin: 0,
+  filename: 'SHS_Certificate.pdf',
+  image: { type: 'jpeg', quality: 1 },
+  html2canvas: { scale: 3, useCORS: true },
+  jsPDF: { unit: 'in', format: 'letter', orientation: 'portrait' }
+}).from(element).save();
+
+    }
+  </script>
+</body>
+</html>
